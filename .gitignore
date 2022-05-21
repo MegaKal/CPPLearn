@@ -1,3 +1,5 @@
 .vs
 HelloWorld/HelloWorld/Debug
 HelloWorld/Debug
+HelloWorld/HelloWorld/HelloWorld.vcxproj
+HelloWorld/HelloWorld/HelloWorld.vcxproj.filters

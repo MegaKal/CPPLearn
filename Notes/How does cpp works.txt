@@ -1,0 +1,79 @@
+How cpp code go from a source file to the binary that we can run on a machine?
+
+Basic workflow:
+
+1- C++ source files which you write using text editor
+2- Pass it through a compiler
+3- Compiler outputs executable program or a Library
+
+We are focusing on executable programs now.
+
+Preprocess
+
+	Compiler first preprocesses the preprocess statements.
+	Preprocess statements begin with #,
+	Example #include: to copy paste other programs
+
+	NB: Preprocess statements are processed before we compile the source code:
+
+
+Main function:
+	Entry point for our applications.
+	Our code executed line by line, and it starts from the main function.
+	Main function return type is an 'int' and you don't have to return anything. (Makes it special function)
+
+Functions:
+	NB: Operators are functions. (+, -, /, X) can be tread as functions
+	1 + 2 => 1.add(1)
+	3 X 5 => 3.multiply(5)
+	...
+	Something like this.
+
+Source File:
+	a cpp code that we write: example 'main.cpp'
+
+Going from source code to Machine code:
+	Source File -> COMPILER -> machine code
+
+
+There are different configuration rules that we can set for a compoiler to output a machine code for a specific platform.
+	Those platforms can be x32, x64, Android, Mac, Windows ...
+
+In visual studio 2017:
+	debug/release configuration
+	win 32 platform
+	debug directories
+	executable Vs Library
+	Optimization 
+	Code generation settings
+	Include directories
+
+
+Each cpp files are going to be compiled.
+Header files are not going to be compiled unless they are included and become part of cpp file.
+
+
+Each cpp file is going to be compiled to an Obj file.
+
+Those Obj files will be linked to create an executable file using Linker.
+
+
+To see the intermidiate files in Visual studio 2017,
+- Just compiling a source file. use Ctl+F7
+- Compiler compiles individual cpp files
+	- Each cpp file has a corresponding ojb file
+- Therefor we have to declare everything we use in that file inorder to compile it independantly.
+	- Declaration: Statement to say a function exists
+	- Definition: This is the actual function
+
+- Declaration is enough to promis that the function exists for a compiler to compile the file.
+
+- Finding the actual definition of a functin is the Linker's job.
+
+- If the declaration doesn't match with the definition, we will get a linker error.
+- If we are using a function that we didn't declare, we will get a compiler error.
+
+So to summarize
+
+Source File -> 'COMPILER' -> Obj File -> 'LINKER' -> Executable File.
+
